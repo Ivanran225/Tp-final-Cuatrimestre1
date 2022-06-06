@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour
-{ 
+{
+	//public GameObject Auto;
+
+
 	//Variables de los imputs
 	private float horizontalInput;
 	private float verticalInput;
@@ -36,6 +39,27 @@ public class Car : MonoBehaviour
 	{
 		RL.motorTorque = verticalInput * motorForce;
 		RR.motorTorque = verticalInput * motorForce;
+
+		FL.motorTorque = verticalInput * motorForce;
+		FR.motorTorque = verticalInput * motorForce;
+
+		//frenos
+		/*
+		if(verticalInput < 0)
+        {
+			Rigidbody rb = GetComponent<Auto>();
+			Vector3 vel = rb.velocity;
+			Debug.Log(vel);
+			if (vel.magnitude > 20) {
+				FL.motorTorque = verticalInput * 4000;
+				FR.motorTorque = verticalInput * 4000;
+
+				RL.motorTorque = verticalInput * 4000;
+				RR.motorTorque = verticalInput * 4000;
+			}
+		}
+		*/
+
 	}
 	//Esta funcion toma la poscion de los wheel coliders y las aplica a los meshes de las ruedas
 	private void GetPosicionRuedas(WheelCollider collider, Transform transform)
