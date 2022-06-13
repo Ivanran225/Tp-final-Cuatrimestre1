@@ -20,6 +20,6 @@ public class Reinicio : MonoBehaviour
 
     public void Reset()
     {
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("SceneCopy");
     }
 }
