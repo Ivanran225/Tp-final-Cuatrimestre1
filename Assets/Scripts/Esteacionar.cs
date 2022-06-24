@@ -71,7 +71,10 @@ public class Esteacionar : MonoBehaviour
     {     
             string i = "Perdiste";
             Estado.text = i;
+            for(int z = 0; z < 100; z++)
+            {
             Instantiate(Cubo);
+            }
             yield return new WaitForSeconds(3);
             Reset();
     }
